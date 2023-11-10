@@ -66,6 +66,9 @@ public class MapParserTest {
             });
         Assertions.assertEquals("Invalid character at 3,1: B", thrown.getMessage());
     }
+    /**
+     * Test for the parseMap method (bad map).
+     */
     @Test
     public void testParseMapWrong2() {
         PacmanConfigurationException thrown =
