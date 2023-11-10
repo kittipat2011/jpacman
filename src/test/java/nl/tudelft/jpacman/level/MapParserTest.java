@@ -13,16 +13,27 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 /**
  * This is a test class for MapParser.
  */
 @ExtendWith(MockitoExtension.class)
 public class MapParserTest {
+    /**
+     * The board use for test.
+     */
     @Mock
     private BoardFactory boardFactory;
+    /**
+     * The level use for test.
+     */
     @Mock
     private LevelFactory levelFactory;
+    /**
+     * The Blinky use for test.
+     */
     @Mock
     private Blinky blinky;
 
@@ -32,8 +43,8 @@ public class MapParserTest {
     @Test
     public void testParseMapGood() {
         MockitoAnnotations.initMocks(this);
-        Assertions.assertNotNull(boardFactory);
-        Assertions.assertNotNull(levelFactory);
+        assertNotNull(boardFactory);
+        assertNotNull(levelFactory);
         Mockito.when(levelFactory.createGhost()).thenReturn(blinky);
         MapParser mapParser = new MapParser(levelFactory, boardFactory);
         ArrayList<String> map = new ArrayList<>();
@@ -51,8 +62,8 @@ public class MapParserTest {
         PacmanConfigurationException thrown =
             Assertions.assertThrows(PacmanConfigurationException.class, () -> {
                 MockitoAnnotations.initMocks(this);
-                Assertions.assertNotNull(boardFactory);
-                Assertions.assertNotNull(levelFactory);
+                assertNotNull(boardFactory);
+                assertNotNull(levelFactory);
                 MapParser mapParser = new MapParser(levelFactory, boardFactory);
                 ArrayList<String> map = new ArrayList<>();
                 /*
@@ -74,8 +85,8 @@ public class MapParserTest {
         PacmanConfigurationException thrown =
             Assertions.assertThrows(PacmanConfigurationException.class, () -> {
                 MockitoAnnotations.initMocks(this);
-                Assertions.assertNotNull(boardFactory);
-                Assertions.assertNotNull(levelFactory);
+                assertNotNull(boardFactory);
+                assertNotNull(levelFactory);
                 MapParser mapParser = new MapParser(levelFactory, boardFactory);
                 ArrayList<String> map = new ArrayList<>();
                 /*
