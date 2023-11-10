@@ -76,8 +76,7 @@ checkstyle {
 
 pmd {
     ruleSetFiles "pmd-rules.xml"
-    ruleSets = []
-    toolVersion = '4.3'
+    ruleSets = ["java-basic", "java-braces"]
 }
 
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
